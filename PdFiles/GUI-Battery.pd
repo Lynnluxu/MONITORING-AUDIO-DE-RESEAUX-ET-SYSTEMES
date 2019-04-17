@@ -1,0 +1,39 @@
+#N canvas 178 203 677 736 10;
+#X obj 101 101 cnv 15 231 283 empty empty empty 20 12 0 14 -232576
+-66577 0;
+#X obj 106 106 cnv 15 221 40 empty empty Battery 55 20 0 25 -204786
+-66577 0;
+#X obj 252 157 cnv 15 75 50 empty empty %-Battery 3 12 0 14 -188498
+-262144 0;
+#X obj 101 384 cnv 15 231 18 empty empty volume 5 12 0 14 -262130 -66577
+0;
+#X obj 191 384 cnv 15 20 18 empty empty donnée 0 12 0 14 -262130 -66577
+0;
+#X obj 280 384 cnv 15 20 18 empty empty bouton 0 12 0 14 -262130 -66577
+0;
+#X obj 188 169 bng 25 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 278 181 5 0 0 0 - - -, f 5;
+#X obj 200 180 image bouton.gif 0;
+#X obj 109 217 volume;
+#X obj 104 408 outlet~;
+#X obj 282 410 outlet;
+#X obj 199 409 outlet;
+#X obj 116 161 loadScript-NoParameters-battery;
+#X obj 221 237 vsl 15 128 0 30 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 473 352 +;
+#X obj 242 279 cnv 15 75 50 empty empty empty 6 12 0 14 -58717 -262144
+0;
+#X floatatom 263 295 5 0 0 0 - - -, f 5;
+#X text 238 353 0;
+#X text 238 237 30;
+#X connect 6 0 11 0;
+#X connect 6 0 13 0;
+#X connect 7 0 15 0;
+#X connect 9 0 10 0;
+#X connect 13 0 7 0;
+#X connect 14 0 15 1;
+#X connect 15 0 17 0;
+#X connect 15 0 12 0;
+#X coords 0 -1 1 1 233 306 1 100 100;

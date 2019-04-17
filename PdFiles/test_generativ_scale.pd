@@ -1,0 +1,48 @@
+#N canvas 472 0 948 963 10;
+#X obj 94 84 bng 33 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 440 431 makenote;
+#X obj 448 544 noteout;
+#X text 692 357 duration express in ms;
+#X obj 101 172 metro;
+#X obj 216 96 nbx 5 14 -1e+037 1e+037 0 0 empty empty empty 0 -8 0
+10 -262144 -1 -1 178 256 0;
+#X obj 40 310 print;
+#X msg 145 92 stop;
+#X text 238 62 metronome;
+#X text 157 334 output random numbers in a moving range;
+#X text 15 142 sends bang periodically with metronome;
+#X text 567 255 velocity in midi = loudness of the volume;
+#X obj 42 556 table Cdorian 27;
+#X obj 49 691 table Cmajor 27;
+#X msg 37 715 \; Cmajor 0 48 50 52 53 55 57 59 60 62 64 65 67 69 71
+72 74 76 77 79 81 83 84 86 88 89 91 93 95 96;
+#X msg 41 579 \; Cdorian 0 48 50 51 53 55 57 58 60 62 63 65 67 69 70
+72 74 75 77 79 81 82 84 86 87 89 91 93 94;
+#X obj 586 303 random 37;
+#X obj 188 298 random 27;
+#X obj 588 337 + 90;
+#X obj 573 641 table Times 5;
+#X msg 580 693 \; Times 0 500 1000 2000 1000 500;
+#X obj 642 423 tabread;
+#X obj 643 383 random 5;
+#X msg 725 400 set Times;
+#X msg 393 301 set Cmajor;
+#X obj 398 368 tabread Cmajor;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 4 0 6 0;
+#X connect 4 0 17 0;
+#X connect 4 0 16 0;
+#X connect 4 0 22 0;
+#X connect 5 0 4 1;
+#X connect 7 0 4 0;
+#X connect 16 0 18 0;
+#X connect 17 0 25 0;
+#X connect 18 0 1 1;
+#X connect 21 0 1 2;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;
+#X connect 24 0 25 0;
+#X connect 25 0 1 0;

@@ -1,0 +1,116 @@
+#N canvas 84 57 960 1000 10;
+#X text 17 20 INLETS:;
+#X text 72 20 offset(trig) odur ndur opitch npitch audio-tab window
+porta;
+#X obj 78 305 r odur;
+#X floatatom 78 325 5 0 0 1 original-duration - -, f 5;
+#X floatatom 105 339 5 0 0 1 new-duration ndur -, f 5;
+#X floatatom 132 353 3 0 0 1 original-pitch opitch -, f 3;
+#X floatatom 160 367 3 0 0 1 new-pitch npitch -, f 3;
+#X text 17 35 INIT: buffer-name buffer-size(ms) audio-table;
+#X floatatom 214 399 5 1 300 1 window(ms) window -, f 5;
+#X floatatom 242 413 5 0 0 1 portamento(ms) porta -, f 5;
+#X floatatom 67 263 5 -100 100000 2 offset - -, f 5;
+#X obj 78 285 s offset;
+#X obj 51 285 f;
+#X obj 51 234 bng 15 250 50 0 empty empty trigger 0 -6 0 12 -262144
+-1 -1;
+#X floatatom 146 450 5 0 0 0 position - -, f 5;
+#X floatatom 242 450 5 0 0 1 duration - -, f 5;
+#X obj 46 463 hip~ 18;
+#X obj 51 431 p-t-player~ buffer1 300 test;
+#X obj 157 653 outlet~;
+#X msg 187 382 test;
+#X obj 208 181 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 209 200 \; opitch 60 \; npitch 60 \; window 50 \; porta 10 \;
+pd dsp 1;
+#X obj 158 594 lop~;
+#X obj 780 248 inlet;
+#X obj 156 624 *~;
+#X obj 554 270 inlet~;
+#X obj 555 294 cnv 15 260 18 empty empty volume 5 12 0 14 -262130 -66577
+0;
+#X obj 555 313 cnv 15 260 255 empty empty empty 20 12 0 14 -204800
+-66577 0;
+#X obj 560 318 cnv 15 250 40 empty empty Sample 80 20 0 25 -204786
+-66577 0;
+#N canvas 735 512 450 300 (subpatch) 0;
+#X array test 105842 float 0 black black;
+#X coords 0 1 105841 -1 200 140 1;
+#X restore 591 423 graph;
+#N canvas 0 22 220 177 soundfile 0;
+#X obj 38 56 openpanel;
+#X msg 38 75 read -resize \$1 test;
+#X obj 38 94 soundfiler;
+#X obj 38 132 s odur;
+#X obj 38 113 / 44.1;
+#X obj 38 37 inlet;
+#X obj 85 132 s ndur;
+#X obj 132 132 s orig;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 0 0;
+#X restore 913 389 pd soundfile;
+#X obj 681 381 bng 23 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#N canvas 0 22 254 197 offset 0;
+#X obj 91 65 r offset;
+#X obj 91 105 -;
+#X obj 91 85 t b f;
+#X obj 91 125 s odur;
+#X obj 132 88 r orig;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 4 0 1 0;
+#X restore 913 367 pd offset;
+#X obj 691 389 image sample.gif 0;
+#X obj 763 294 cnv 15 20 18 empty empty donnée 0 12 0 14 -262130 -66577
+0;
+#X obj 555 568 cnv 15 260 16 empty empty sortie_audio 5 12 0 14 -262130
+-66577 0;
+#X floatatom 422 562 5 0 0 0 - - -, f 5;
+#X obj 456 472 mtof;
+#X obj 450 683 /;
+#X obj 457 634 * 2047;
+#X obj 10 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 49 183 metro 2400;
+#X obj 197 117 t b b;
+#X obj 210 73 loadbang;
+#X connect 2 0 3 0;
+#X connect 3 0 17 1;
+#X connect 4 0 17 2;
+#X connect 5 0 17 3;
+#X connect 6 0 17 4;
+#X connect 8 0 17 6;
+#X connect 9 0 17 7;
+#X connect 10 0 11 0;
+#X connect 10 0 12 1;
+#X connect 12 0 17 0;
+#X connect 13 0 12 0;
+#X connect 16 0 22 0;
+#X connect 17 0 16 0;
+#X connect 17 1 14 0;
+#X connect 17 2 15 0;
+#X connect 19 0 17 5;
+#X connect 20 0 21 0;
+#X connect 22 0 24 0;
+#X connect 23 0 37 0;
+#X connect 24 0 18 0;
+#X connect 25 0 24 1;
+#X connect 31 0 30 0;
+#X connect 37 0 36 0;
+#X connect 37 0 22 1;
+#X connect 40 0 41 0;
+#X connect 41 0 13 0;
+#X connect 42 0 20 0;
+#X connect 42 1 40 0;
+#X connect 43 0 42 0;
+#X coords 0 -1 1 1 262 299 1 554 290;

@@ -1,0 +1,6 @@
+#N canvas 1109 110 450 300 10;
+#X obj 164 121 generativ_osc;
+#X obj 138 219 dac~;
+#X floatatom 254 63 5 0 0 0 - - -, f 5;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;

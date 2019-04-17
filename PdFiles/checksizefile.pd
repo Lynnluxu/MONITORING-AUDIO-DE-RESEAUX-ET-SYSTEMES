@@ -1,0 +1,42 @@
+#N canvas 691 529 823 460 10;
+#X obj 441 54 openpanel;
+#X obj 340 211 shell;
+#X floatatom 340 233 5 0 0 0 - - -, f 5;
+#X obj 414 258 print ScriptExec;
+#X obj 340 26 bng 23 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 340 189 route list;
+#X obj 340 145 pack s s s;
+#X obj 377 54 openpanel;
+#X msg 340 54 sh;
+#X obj 377 26 bng 23 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 441 26 bng 23 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 340 295 akick6;
+#X obj 340 360 dac~;
+#X obj 342 259 * 10;
+#X obj 528 25 bng 23 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 528 53 sh;
+#X obj 197 25 metro 600;
+#X obj 146 10 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 0 0 6 2;
+#X connect 1 0 2 0;
+#X connect 2 0 13 0;
+#X connect 4 0 8 0;
+#X connect 5 0 1 0;
+#X connect 6 0 5 0;
+#X connect 6 0 3 0;
+#X connect 7 0 6 1;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 13 0 11 0;
+#X connect 13 0 11 1;
+#X connect 14 0 15 0;
+#X connect 16 0 4 0;
+#X connect 17 0 16 0;

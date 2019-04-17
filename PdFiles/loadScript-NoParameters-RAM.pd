@@ -1,0 +1,35 @@
+#N canvas 1173 404 598 484 10;
+#X obj 100 100 cnv 15 40 40 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X obj -36 264 shell;
+#X obj -9 294 print ScriptExec;
+#X obj -36 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -25 373 outlet;
+#X obj -16 5 inlet;
+#X msg -36 141 sh;
+#X obj 9 152 openpanel;
+#X obj -36 181 pack s s;
+#X obj 109 109 bng 23 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -36 226 route list;
+#X obj 120 121 image sh.gif 0;
+#X obj 94 392 outlet;
+#X obj -33 61 metro 600;
+#X obj 52 32 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj -36 326 route MaxRAM UsedRAM;
+#X connect 1 0 15 0;
+#X connect 1 1 2 0;
+#X connect 3 0 6 0;
+#X connect 5 0 14 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 8 0 10 0;
+#X connect 9 0 7 0;
+#X connect 10 0 1 0;
+#X connect 13 0 3 0;
+#X connect 14 0 13 0;
+#X connect 15 0 4 0;
+#X connect 15 1 12 0;
+#X coords 0 -1 1 1 40 40 2 100 100;

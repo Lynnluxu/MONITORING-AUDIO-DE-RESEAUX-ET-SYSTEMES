@@ -1,0 +1,87 @@
+#N canvas 410 2 958 966 10;
+#X obj 101 101 cnv 15 260 160 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 106 105 cnv 15 250 40 empty empty Menu 95 20 0 25 -204786 -66577
+0;
+#X obj 106 156 bng 25 250 50 0 open-guide! empty <--Guide 27 12 0 16
+-262144 -260097 -229384;
+#X obj 106 191 bng 25 250 50 0 empty empty <--Enregistrer 27 12 0 16
+-262144 -260097 -229384;
+#X obj 106 226 bng 25 250 50 0 \$0-quit! empty <--Quitter 27 12 0 16
+-262144 -260097 -229384;
+#X msg 106 302 \; pd quit;
+#X obj 106 270 savepanel;
+#X obj 118 238 image quitter.gif 0;
+#X obj 180 270 savepanel;
+#X obj 119 205 image enregistrer.gif 0;
+#X obj 117 168 image help.gif 0;
+#N canvas 150 516 450 300 menu 0;
+#X obj 190 93 r open-guide!;
+#N canvas 606 235 787 698 guide 1;
+#X obj 202 557 cnv 15 375 60 empty empty empty 20 12 0 14 -226533 -66577
+0;
+#X obj 17 17 cnv 15 750 60 empty empty Bienvenue_dans_le_guide_de_notre_interface_de_monitoring_audio_du_système
+20 12 0 14 -150893 -262144 0;
+#X obj 17 88 cnv 15 365 20 empty empty Boîte-module 20 12 0 14 -262130
+-66577 0;
+#X obj 402 89 cnv 15 365 20 empty empty Boîte-Sonorités 20 12 0 14
+-262130 -66577 0;
+#X text 17 115 La boîte "Module" permet de choisir l'information qu'on
+souhaite analyser en faisant apparaître sa boîte. Pour cela \, il
+suffit simplement d'appuyer sur le bouton + pour faire apparaître
+le module en question.;
+#X obj 18 179 cnv 15 365 20 empty empty Les-modules 20 12 0 14 -232576
+-66577 0;
+#X text 19 205 Dans un premier temps pour charger le script correspondant
+à l'information que vous voulez analyser il suffira de cliquer sur
+le petit logo "sh".;
+#X text 19 321 Les données numériques jugées pertinentes pour chaque
+paramètre sont affichées dans la box rouge du module correspondant.
+;
+#X text 403 115 La boîte "Sonorités" permet de choisir dans quel
+boîte son nous souhaitons faire sortir l'information. Pour cela \,
+il suffit simplement d'appuyer sur le bouton + pour faire apparaître
+la boîte en question.;
+#X obj 402 179 cnv 15 365 20 empty empty Les-sons 20 12 0 14 -204800
+-66577 0;
+#X text 400 278 Le Synthé sera plus adapté pour des valeurs dites
+continues (comme le CPU \, la RAM ou la Swap en effet il ne serait
+pas pertinent de l'utiliser pour le niveau de batterie qui ne fluctue
+pas rapidement dans le temps).;
+#X text 401 235 Pour pouvoir interpréter ces valeurs il faudra relier
+les paramètres volume \, donnée et bouton pour certaines boîtes
+aux entrées correspondantes de nos boîtes sons.;
+#X text 401 205 Ces boîtes permettent à l'utilisateur de choisir
+de quelle manière l'information sera interprétée.;
+#X text 401 334 Le bang renvoie 3 bips à l'utilisateur \, le premier
+et deuxième étant les bips indiquant la valeur minimale et maximale
+de la donnée à analyser \, ce sont des bips de référence. Le troisième
+bip renvoie la valeur actuelle de la donnée analysée (idéal pour
+la boîte Battery ou la boîte Storage).;
+#X text 401 416 La boîte "Générative" permet de jouer une gamme
+choisie par l'utilisateur de manière aléatoire \, plus la donnée
+sera élevée plus le tempo de la musique jouée s'accélerrera (de
+même que pour le Synthé \, c'est idéal pour des données continues).
+;
+#X text 401 485 La boîte "Sample" permet de charger un sample (via
+le bouton jaune avec une croche) comme un accompagnement de batterie
+ou une musique choisie par l'utilisateur \, un filtre se couplera à
+ce sample s'il y a des fluctuations des données reçues.;
+#X text 209 567 !!! N'oubliez pas d'allumer le DSP et de relier vos
+sorties audios des boîtes sons sur le DAC~ pour entendre quelquechose
+!!!;
+#X text 19 291 Le bouton audio permet d'activer le son. Celui-ci n'est
+pas continue et le son s'arrête une fois l'information donnée;
+#X text 19 248 L'interrupteur ON/OFF permet d'activer ou non d'activer
+le son pour un module. Les modules avec des interrupteurs ON/OFF générent
+des sons continues.;
+#X restore 190 70 pd guide;
+#X msg 190 136 \; pd-guide vis \$1;
+#X msg 190 114 1;
+#X connect 0 0 3 0;
+#X connect 3 0 2 0;
+#X restore 374 114 pd menu;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X coords 0 -1 1 1 262 162 1 100 100;

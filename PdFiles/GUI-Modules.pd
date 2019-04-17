@@ -1,0 +1,105 @@
+#N canvas 0 55 1920 1002 10;
+#X obj 101 101 cnv 15 380 212 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 106 105 cnv 15 370 40 empty empty Modules 130 20 0 25 -204786
+-66577 0;
+#X obj 106 177 bng 25 250 50 0 \$0-create-CPU! empty <--CPU 27 12 0
+16 -262144 -260097 -229384;
+#X obj 106 212 bng 25 250 50 0 \$0-create-RAM! empty <--RAM 27 12 0
+16 -262144 -260097 -229384;
+#X obj 106 247 bng 25 250 50 0 \$0-create-Swap! empty <--Swap 27 12
+0 16 -262144 -260097 -229384;
+#X obj 106 151 cnv 15 150 20 empty empty son-continue 5 12 1 14 -99865
+-262144 0;
+#X obj 325 151 cnv 15 150 20 empty empty bang 5 12 1 14 -99865 -262144
+0;
+#X obj 325 177 bng 25 250 50 0 \$0-create-Battery! empty <--Battery
+27 12 0 16 -262144 -260097 -229384;
+#X obj 325 212 bng 25 250 50 0 \$0-create-Storage! empty <--Storage
+27 12 0 16 -262144 -260097 -229384;
+#X obj 325 247 bng 25 250 50 0 \$0-create-Network! empty <--Network
+27 12 0 16 -262144 -260097 -229384;
+#X obj 325 283 bng 25 250 50 0 \$0-create-DeleteFile! empty <--Delete
+27 12 0 16 -262144 -260097 -229384;
+#N canvas 481 89 958 966 patch-modules 0;
+#X obj 16 21 r \$0-create-RAM!;
+#X obj 16 44 bang;
+#X msg 16 67 GUI-RAM;
+#X obj 16 90 pack s;
+#X obj 301 44 bang;
+#X obj 301 90 pack s;
+#X obj 301 21 r \$0-create-CPU!;
+#X msg 301 67 GUI-CPU;
+#X obj 17 204 bang;
+#X obj 17 250 pack s;
+#X msg 17 227 GUI-Swap;
+#X obj 17 181 r \$0-create-Swap!;
+#X obj 302 204 bang;
+#X obj 302 250 pack s;
+#X msg 302 227 GUI-Swap;
+#X obj 302 181 r \$0-create-Swap!;
+#X obj 17 367 bang;
+#X obj 17 413 pack s;
+#X obj 302 367 bang;
+#X obj 302 413 pack s;
+#X obj 17 344 r \$0-create-Battery!;
+#X msg 17 390 GUI-Battery;
+#X obj 302 344 r \$0-create-Storage!;
+#X msg 302 390 GUI-Storage;
+#X obj 17 528 bang;
+#X obj 17 574 pack s;
+#X obj 302 528 bang;
+#X obj 302 574 pack s;
+#X obj 17 505 r \$0-create-Network!;
+#X msg 17 551 GUI-DownloadUpload;
+#X obj 302 505 r \$0-create-DeleteFile!;
+#X msg 302 551 GUI-CheckSizeDelete;
+#X msg 16 113 \; pd-GUI.pd obj 500 200 \$1;
+#X msg 17 273 \; pd-GUI.pd obj 500 200 \$1;
+#X msg 17 436 \; pd-GUI.pd obj 500 200 \$1;
+#X msg 17 597 \; pd-GUI.pd obj 500 200 \$1;
+#X msg 301 113 \; pd-GUI.pd obj 500 200 \$1;
+#X msg 302 273 \; pd-GUI.pd obj 500 200 \$1;
+#X msg 302 436 \; pd-GUI.pd obj 500 200 \$1;
+#X msg 302 597 \; pd-GUI.pd obj 500 200 \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 32 0;
+#X connect 4 0 7 0;
+#X connect 5 0 36 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 9 0 33 0;
+#X connect 10 0 9 0;
+#X connect 11 0 8 0;
+#X connect 12 0 14 0;
+#X connect 13 0 37 0;
+#X connect 14 0 13 0;
+#X connect 15 0 12 0;
+#X connect 16 0 21 0;
+#X connect 17 0 34 0;
+#X connect 18 0 23 0;
+#X connect 19 0 38 0;
+#X connect 20 0 16 0;
+#X connect 21 0 17 0;
+#X connect 22 0 18 0;
+#X connect 23 0 19 0;
+#X connect 24 0 29 0;
+#X connect 25 0 35 0;
+#X connect 26 0 31 0;
+#X connect 27 0 39 0;
+#X connect 28 0 24 0;
+#X connect 29 0 25 0;
+#X connect 30 0 26 0;
+#X connect 31 0 27 0;
+#X restore 502 119 pd patch-modules;
+#X obj 336 295 image ajouter.gif 0;
+#X obj 337 259 image ajouter.gif 0;
+#X obj 337 224 image ajouter.gif 0;
+#X obj 337 189 image ajouter.gif 0;
+#X obj 117 259 image ajouter.gif 0;
+#X obj 117 223 image ajouter.gif 0;
+#X obj 118 189 image ajouter.gif 0;
+#X coords 0 -1 1 1 382 214 1 100 100;

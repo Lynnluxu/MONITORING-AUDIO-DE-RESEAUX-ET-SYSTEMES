@@ -1,0 +1,13 @@
+#N canvas 987 490 450 323 10;
+#X obj 83 173 shell;
+#X obj 149 188 print ScriptExec;
+#X obj 83 247 outlet;
+#X obj 15 8 inlet;
+#X obj 84 58 delay 1333;
+#X msg 84 123 sh /home/lxu/Documents/M1S1/Project1/shScript/GetBatteryLevel_Ubuntu.sh
+;
+#X connect 0 0 2 0;
+#X connect 0 1 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;

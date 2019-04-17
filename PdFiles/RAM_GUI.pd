@@ -1,0 +1,52 @@
+#N canvas 275 321 1440 736 10;
+#X obj 101 101 cnv 15 346 300 empty empty empty 20 12 0 14 -232576
+-66577 0;
+#X obj 106 106 cnv 15 336 40 empty empty RAM 150 20 0 25 -204786 -66577
+0;
+#X obj 101 383 cnv 15 346 18 empty empty volume 5 12 0 14 -262130 -66577
+0;
+#X obj 396 383 cnv 15 20 18 empty empty donnée 0 12 0 14 -262130 -66577
+0;
+#X obj 256 156 cnv 15 75 50 empty empty Max_RAM 10 12 0 14 -188498
+-262144 0;
+#X obj 367 156 cnv 15 75 50 empty empty Used_RAM 6 12 0 14 -188498
+-262144 0;
+#X obj 190 167 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 387 179 5 0 0 0 - - -, f 5;
+#X floatatom 278 179 5 0 0 0 - - -, f 5;
+#X obj 478 318 /;
+#X floatatom 382 224 5 0 0 0 - - -, f 5;
+#X obj 234 35 s bang 2;
+#X obj 478 275 * 100;
+#X obj 202 178 image 1.gif 0;
+#X msg 131 37 open \$1.gif;
+#X obj 413 420 outlet;
+#X text 159 171 OFF;
+#X text 223 171 ON;
+#X obj 106 157 loadScript-NoParameters;
+#X obj 83 418 outlet~;
+#X obj 239 217 GUI-Volume;
+#X obj 411 44 route MaxRAM UsedRAM;
+#X obj 341 235 vsl 15 128 0 20 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 547 390 +;
+#X floatatom 385 268 5 0 0 0 - - -, f 5;
+#X connect 6 0 11 0;
+#X connect 6 0 14 0;
+#X connect 6 0 18 0;
+#X connect 6 0 20 0;
+#X connect 7 0 12 0;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 10 0 23 0;
+#X connect 12 0 9 0;
+#X connect 14 0 13 0;
+#X connect 18 0 21 0;
+#X connect 20 0 19 0;
+#X connect 21 0 8 0;
+#X connect 21 1 7 0;
+#X connect 22 0 23 1;
+#X connect 23 0 24 0;
+#X connect 24 0 15 0;
+#X coords 0 -1 1 1 348 307 1 100 100;

@@ -1,0 +1,17 @@
+#N canvas 1195 379 450 300 10;
+#X obj 200 130 minmaxStorage;
+#X obj 145 129 akick6;
+#X obj 62 35 inlet;
+#X obj 139 67 inlet;
+#X obj 238 83 inlet;
+#X obj 168 254 outlet~;
+#X obj 140 204 *~;
+#X obj 204 170 +~;
+#X connect 0 0 7 1;
+#X connect 1 0 7 0;
+#X connect 2 0 6 0;
+#X connect 3 0 1 1;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 1;

@@ -1,0 +1,27 @@
+#N canvas 0 55 1920 1002 10;
+#X obj -3 0 cnv 15 1920 100 empty empty Monitoring-Audio-du-Système
+600 50 0 50 -261682 -66577 0;
+#X obj 8 111 menu;
+#X text 811 81 Giovanni HADDADI - Hubert MILLIOTTE - Malo WITMEUR -
+Lynn XU;
+#X obj 285 111 CPU_GUI;
+#X obj 669 777 DAC_GUI;
+#X obj 535 110 RAM_GUI;
+#X obj 894 110 Storage_GUI;
+#X obj 1132 110 GUI-Battery;
+#X obj 736 578 GUI-Synthe;
+#X obj 140 549 GUI-Sample;
+#X obj 436 549 GUI-Generative;
+#X obj 1079 757 GUI-Bang;
+#X obj 1371 110 GUI-Swap;
+#X obj 1644 496 GUI-DownloadUpload;
+#X obj 1182 464 GUI-CheckSizeDelete;
+#X connect 8 0 4 0;
+#X connect 8 0 4 1;
+#X connect 9 0 4 0;
+#X connect 9 0 4 1;
+#X connect 10 0 4 0;
+#X connect 10 0 4 1;
+#X connect 11 0 4 0;
+#X connect 11 0 4 1;
+#X coords 0 0 1 1 85 60 0;

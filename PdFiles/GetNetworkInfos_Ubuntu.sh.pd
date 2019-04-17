@@ -1,0 +1,16 @@
+#N canvas 735 422 450 300 10;
+#X obj 98 145 shell;
+#X obj 125 168 print ScriptExec;
+#X obj 98 43 metro 1000;
+#X obj 98 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 98 219 outlet;
+#X obj 27 -13 inlet;
+#X msg 98 102 sh /home/lxu/Documents/M1S1/Project1/shScript/GetNetworkInfos_Ubuntu.sh
+;
+#X connect 0 0 4 0;
+#X connect 0 1 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 0 0;

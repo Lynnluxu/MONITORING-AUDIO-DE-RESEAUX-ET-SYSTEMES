@@ -1,0 +1,45 @@
+#N canvas 96 293 1440 759 10;
+#X obj 101 101 cnv 15 233 300 empty empty empty 20 12 0 14 -232576
+-66577 0;
+#X obj 106 106 cnv 15 223 40 empty empty CPU 90 20 0 25 -204786 -66577
+0;
+#X obj 253 157 cnv 15 75 50 empty empty %-CPU 16 12 0 14 -188498 -262144
+0;
+#X obj 185 165 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 274 180 5 0 0 3 - - -, f 5;
+#X obj 242 37 s bang 1;
+#X obj 198 178 image 0.gif 0;
+#X msg 137 37 open \$1.gif;
+#X obj 101 384 cnv 15 233 18 empty empty volume 5 12 0 14 -262130 -66577
+0;
+#X obj 283 384 cnv 15 20 18 empty empty donnée 0 12 0 14 -262130 -66577
+0;
+#X obj 326 421 outlet;
+#X text -31 438 outlet à brancher sur l'entrée du volume;
+#X text 277 437 outlet à brancher sur la donnée;
+#X text 156 170 OFF;
+#X text 218 170 ON;
+#X obj 106 157 dataCPU-GUI;
+#X obj 60 421 outlet~;
+#X obj 108 219 GUI-Volume;
+#X obj 224 239 vsl 15 128 0 40 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 475 355 +;
+#X obj 245 280 cnv 15 75 50 empty empty empty 16 12 0 14 -58717 -262144
+0;
+#X floatatom 268 297 5 0 0 0 - - -, f 5;
+#X text 241 354 0;
+#X text 241 238 20;
+#X connect 3 0 5 0;
+#X connect 3 0 7 0;
+#X connect 3 0 15 0;
+#X connect 3 0 17 0;
+#X connect 4 0 19 0;
+#X connect 7 0 6 0;
+#X connect 15 0 4 0;
+#X connect 17 0 16 0;
+#X connect 18 0 19 1;
+#X connect 19 0 21 0;
+#X connect 19 0 10 0;
+#X coords 0 -1 1 1 235 307 1 100 100;

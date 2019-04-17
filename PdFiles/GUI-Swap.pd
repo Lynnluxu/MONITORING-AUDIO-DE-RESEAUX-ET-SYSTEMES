@@ -1,0 +1,56 @@
+#N canvas 911 91 958 966 10;
+#X obj 101 101 cnv 15 346 300 empty empty empty 20 12 0 14 -232576
+-66577 0;
+#X obj 106 106 cnv 15 336 40 empty empty Swap 145 20 0 25 -204786 -66577
+0;
+#X obj 101 383 cnv 15 346 18 empty empty volume 5 12 0 14 -262130 -66577
+0;
+#X obj 396 383 cnv 15 20 18 empty empty donnée 0 12 0 14 -262130 -66577
+0;
+#X obj 256 156 cnv 15 75 50 empty empty Max_Swap 7 12 0 14 -188498
+-262144 0;
+#X obj 367 156 cnv 15 75 50 empty empty Used_Swap 3 12 0 14 -188498
+-262144 0;
+#X floatatom 277 179 5 0 0 0 - - -, f 5;
+#X floatatom 387 179 5 0 0 0 - - -, f 5;
+#X obj 189 169 tgl 25 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 512 273 /;
+#X obj 111 217 volume;
+#X obj 105 415 outlet~;
+#X obj 405 412 outlet;
+#X obj 201 177 image 1.gif 0;
+#X text 158 171 OFF;
+#X text 222 171 ON;
+#X msg 150 32 open \$1.gif;
+#X obj 111 159 loadScript-Swap;
+#X obj 309 38 route UsedSwap MaxSwap;
+#X obj 226 266 cnv 15 75 50 empty empty empty 6 12 0 14 -58717 -262144
+0;
+#X floatatom 464 372 5 0 0 0 - - -, f 5;
+#X floatatom 530 86 5 0 0 0 - - -, f 5;
+#X obj 545 223 * -100;
+#X obj 593 282 + 100;
+#X obj 591 334 * 100;
+#X obj 540 403 /;
+#X floatatom 247 282 5 0 0 0 - - -, f 5;
+#X connect 6 0 9 1;
+#X connect 6 0 25 1;
+#X connect 7 0 22 0;
+#X connect 7 0 24 0;
+#X connect 8 0 16 0;
+#X connect 8 0 17 0;
+#X connect 8 0 10 0;
+#X connect 9 0 23 0;
+#X connect 10 0 11 0;
+#X connect 16 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 7 0;
+#X connect 18 1 6 0;
+#X connect 18 2 21 0;
+#X connect 20 0 12 0;
+#X connect 22 0 9 0;
+#X connect 23 0 20 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X coords 0 -1 1 1 348 307 1 100 100;

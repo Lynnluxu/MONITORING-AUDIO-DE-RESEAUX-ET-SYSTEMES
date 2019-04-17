@@ -1,0 +1,10 @@
+#N canvas 0 0 1920 976 10;
+#X obj -3 0 cnv 15 1920 100 empty empty Monitoring-Audio-du-Système
+600 50 0 50 -261682 -66577 0;
+#X obj 927 877 GUI-DAC;
+#X obj 8 111 GUI-Menu;
+#X obj 8 284 GUI-Modules;
+#X obj 8 509 GUI-Sons;
+#X text 811 81 Giovanni HADDADI - Hubert MILLIOTTE - Malo WITMEUR -
+Lu XU;
+#X coords 0 0 1 1 85 60 0;

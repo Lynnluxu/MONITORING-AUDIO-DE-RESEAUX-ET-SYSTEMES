@@ -1,0 +1,56 @@
+#N canvas 0 0 1920 976 10;
+#X obj 101 101 cnv 15 190 191 empty empty empty 20 12 0 14 -262130
+-66577 0;
+#X obj 106 105 cnv 15 180 40 empty empty Sonorité 30 20 0 25 -204786
+-66577 0;
+#X obj 106 156 bng 25 250 50 0 \$0-create-Bang! empty <--Bang 27 12
+0 16 -262144 -260097 -229384;
+#X obj 106 191 bng 25 250 50 0 \$0-create-Synthe! empty <--Synthé
+27 12 0 16 -262144 -260097 -229384;
+#X obj 106 226 bng 25 250 50 0 \$0-create-Generative! empty <--Générative
+27 12 0 16 -262144 -260097 -229384;
+#X obj 106 262 bng 25 250 50 0 \$0-create-Sample! empty <--Sample 27
+12 0 16 -262144 -260097 -229384;
+#N canvas 481 89 958 966 patch-sons 1;
+#X obj 16 44 bang;
+#X obj 16 90 pack s;
+#X obj 301 44 bang;
+#X obj 301 90 pack s;
+#X obj 17 204 bang;
+#X obj 17 250 pack s;
+#X obj 302 204 bang;
+#X obj 302 250 pack s;
+#X obj 16 21 r \$0-create-Bang!;
+#X msg 16 67 GUI-Bang;
+#X obj 301 21 r \$0-create-Synthe!;
+#X msg 301 67 GUI-Synthe;
+#X obj 17 181 r \$0-create-Generative!;
+#X msg 17 227 GUI-Generative;
+#X obj 302 181 r \$0-create-Sample!;
+#X msg 302 227 GUI-Sample;
+#X msg 16 113 \; pd-GUI.pd obj 500 600 \$1;
+#X msg 17 273 \; pd-GUI.pd obj 500 600 \$1;
+#X msg 301 113 \; pd-GUI.pd obj 500 600 \$1;
+#X msg 302 272 \; pd-GUI.pd obj 500 600 \$1;
+#X connect 0 0 9 0;
+#X connect 1 0 16 0;
+#X connect 2 0 11 0;
+#X connect 3 0 18 0;
+#X connect 4 0 13 0;
+#X connect 5 0 17 0;
+#X connect 6 0 15 0;
+#X connect 7 0 19 0;
+#X connect 8 0 0 0;
+#X connect 9 0 1 0;
+#X connect 10 0 2 0;
+#X connect 11 0 3 0;
+#X connect 12 0 4 0;
+#X connect 13 0 5 0;
+#X connect 14 0 6 0;
+#X connect 15 0 7 0;
+#X restore 319 115 pd patch-sons;
+#X obj 117 168 image ajouter.gif 0;
+#X obj 117 203 image ajouter.gif 0;
+#X obj 117 238 image ajouter.gif 0;
+#X obj 117 274 image ajouter.gif 0;
+#X coords 0 -1 1 1 192 193 1 100 100;

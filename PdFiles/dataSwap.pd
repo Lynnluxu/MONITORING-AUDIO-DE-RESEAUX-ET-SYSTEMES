@@ -1,0 +1,20 @@
+#N canvas 403 544 599 438 10;
+#X obj 100 169 shell;
+#X obj 127 192 print ScriptExec;
+#X obj 98 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 100 243 outlet;
+#X msg 79 37 1;
+#X msg 152 36 0;
+#X obj 29 10 inlet;
+#X obj 100 67 metro 500;
+#X msg 100 125 sh /home/lxu/Documents/M1S1/Project1/shScript/GetSwap_Ubuntu.sh
+;
+#X connect 0 0 3 0;
+#X connect 0 1 1 0;
+#X connect 2 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 2 0;
+#X connect 8 0 0 0;

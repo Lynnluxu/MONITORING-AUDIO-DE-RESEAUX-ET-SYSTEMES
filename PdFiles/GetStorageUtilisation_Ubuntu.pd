@@ -1,0 +1,13 @@
+#N canvas 1210 472 450 300 10;
+#X obj 94 173 shell;
+#X obj 121 196 print ScriptExec;
+#X obj 23 15 inlet;
+#X msg 92 131 sh /home/lxu/Documents/M1S1/Project1/shScript/GetStorageUtilisation_Ubuntu.sh
+;
+#X obj 94 233 outlet;
+#X obj 114 51 delay 1333;
+#X connect 0 0 4 0;
+#X connect 0 1 1 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 5 0 3 0;

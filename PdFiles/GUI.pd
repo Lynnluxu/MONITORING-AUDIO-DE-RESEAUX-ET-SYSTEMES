@@ -1,0 +1,26 @@
+#N canvas 0 55 1920 1002 10;
+#X obj -3 0 cnv 15 1920 100 empty empty Monitoring-Audio-du-Système
+600 50 0 50 -261682 -66577 0;
+#X obj 1146 111 GUI-Battery;
+#X obj 289 533 GUI-Synthe;
+#X obj 534 111 GUI-RAM;
+#X obj 770 854 GUI-DAC;
+#X obj 597 532 GUI-Bang;
+#X obj 1212 532 GUI-Sample;
+#X obj 890 533 GUI-Generative;
+#X obj 8 111 GUI-Menu;
+#X obj 284 110 GUI-CPU;
+#X obj 1394 111 GUI-CheckSizeDelete;
+#X text 806 86 Giovanni HADDADI - Hubert MILLIOTTE - Malo WITMEUR -
+Lu XU;
+#X obj 893 111 Storage_GUI;
+#X obj 1527 376 GUI-Swap;
+#X connect 2 0 4 0;
+#X connect 2 0 4 1;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 0;
+#X connect 6 0 4 1;
+#X connect 7 0 4 0;
+#X connect 7 0 4 1;
+#X coords 0 0 1 1 85 60 0;
